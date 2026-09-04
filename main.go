@@ -6,7 +6,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/my-labs/zsh-history-cleaner/internal/history"
+	"github.com/pradyb/zsh-history-cleaner/internal/history"
 )
 
 const defaultHistoryFile = "~/.zsh_history"

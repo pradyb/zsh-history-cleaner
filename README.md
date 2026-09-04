@@ -17,7 +17,7 @@ Supports both plain and `EXTENDED_HISTORY` formats. A timestamped backup is alwa
 ## Installation
 
 ```sh
-git clone https://github.com/my-labs/zsh-history-cleaner
+git clone https://github.com/pradyb/zsh-history-cleaner
 cd zsh-history-cleaner
 go build -o ~/bin/zsh-history-cleaner .
 ```
@@ -25,7 +25,7 @@ go build -o ~/bin/zsh-history-cleaner .
 Make sure `~/bin` is on your `$PATH`, or install directly:
 
 ```sh
-go install github.com/my-labs/zsh-history-cleaner@latest
+go install github.com/pradyb/zsh-history-cleaner@latest
 ```
 
 ## Usage

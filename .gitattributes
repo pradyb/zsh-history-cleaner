@@ -1,0 +1,22 @@
+# Normalize line endings.
+#
+# Without this, core.autocrlf on Windows checks Go files out with CRLF, which
+# makes `gofmt -l .` report every file as unformatted and produces whole-file
+# diffs between contributors on different platforms. Force LF in the working
+# tree for everything the toolchain reads.
+
+* text=auto eol=lf
+
+*.go       text eol=lf
+*.mod      text eol=lf
+*.sum      text eol=lf
+*.md       text eol=lf
+*.yml      text eol=lf
+*.yaml     text eol=lf
+.gitignore text eol=lf
+
+# Never touch these.
+*.exe      binary
+*.dll      binary
+*.png      binary
+*.jpg      binary

@@ -1,0 +1,26 @@
+/bin
+/dist
+/build
+
+# VS Code
+.vscode
+
+# IntelliJ
+.idea
+
+# macOS
+.DS_Store
+
+# vim
+*.swp
+
+# Binaries
+*.exe
+*.dll
+zsh-history-cleaner
+
+# Claude AI config
+.claude/
+
+# Test cache
+/tmp/

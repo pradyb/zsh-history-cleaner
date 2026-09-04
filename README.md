@@ -56,8 +56,8 @@ zhc --dry-run --stats
 # Clean with default passes (dedup + typos + length filter)
 zhc --stats
 
-# Also strip credentials and re-sort by timestamp
-zhc --remove-secrets --sort --stats
+# Also strip credentials (sorting is on by default)
+zhc --remove-secrets --stats
 
 # Stricter length filter, skip typo detection
 zhc --min-len 4 --no-typos

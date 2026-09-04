@@ -24,3 +24,9 @@ CI runs the same checks on every push and PR.
 - Keep the tool dependency-free (stdlib only) unless there's a strong reason not to.
 - Add a test for any new filter pass or parsing behaviour.
 - Update the README's flags/features tables if you change user-facing behaviour.
+
+## Questions
+
+For usage questions or half-formed ideas, use
+[Discussions](https://github.com/pradyb/zsh-history-cleaner/discussions) rather than
+the issue tracker. Issues are for reproducible bugs and concrete feature requests.

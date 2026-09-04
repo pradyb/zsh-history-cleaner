@@ -1,0 +1,7 @@
+contact_links:
+  - name: Question or usage help
+    url: https://github.com/pradyb/zsh-history-cleaner/discussions/categories/q-a
+    about: Ask how to use zhc, or why it removed something you expected to keep.
+  - name: Ideas and feedback
+    url: https://github.com/pradyb/zsh-history-cleaner/discussions/categories/ideas
+    about: Float an idea before opening a feature request.

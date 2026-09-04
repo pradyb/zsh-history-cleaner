@@ -11,6 +11,13 @@ import (
 
 const defaultHistoryFile = "~/.zsh_history"
 
+// Injected at build time via -ldflags by .github/workflows/release.yml.
+var (
+	version   = "dev"
+	commitSHA = "none"
+	buildDate = "unknown"
+)
+
 func main() {
 	var (
 		histFile      = flag.String("file", defaultHistoryFile, "Path to the zsh history file")
@@ -21,6 +28,7 @@ func main() {
 		noSort        = flag.Bool("no-sort", false, "Skip sorting entries by timestamp")
 		minLen        = flag.Int("min-len", 2, "Drop commands shorter than this many characters (0 to disable)")
 		stats         = flag.Bool("stats", false, "Print removal statistics")
+		showVersion   = flag.Bool("version", false, "Print version information and exit")
 	)
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "Usage: zhc [flags]\n\nFlags:\n")
@@ -34,6 +42,11 @@ Examples:
 `)
 	}
 	flag.Parse()
+
+	if *showVersion {
+		fmt.Printf("zhc %s (commit %s, built %s)\n", version, commitSHA, buildDate)
+		return
+	}
 
 	path := expandHome(*histFile)
 

@@ -23,14 +23,14 @@ func main() {
 		stats         = flag.Bool("stats", false, "Print removal statistics")
 	)
 	flag.Usage = func() {
-		fmt.Fprintf(os.Stderr, "Usage: zsh-history-cleaner [flags]\n\nFlags:\n")
+		fmt.Fprintf(os.Stderr, "Usage: zhc [flags]\n\nFlags:\n")
 		flag.PrintDefaults()
 		fmt.Fprintf(os.Stderr, `
 Examples:
-  zsh-history-cleaner --dry-run --stats
-  zsh-history-cleaner --file ~/.zsh_history --min-len 3
-  zsh-history-cleaner --remove-secrets --stats
-  zsh-history-cleaner --no-typos --no-sort --stats
+  zhc --dry-run --stats
+  zhc --file ~/.zsh_history --min-len 3
+  zhc --remove-secrets --stats
+  zhc --no-typos --no-sort --stats
 `)
 	}
 	flag.Parse()

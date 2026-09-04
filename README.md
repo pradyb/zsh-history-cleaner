@@ -19,19 +19,19 @@ Supports both plain and `EXTENDED_HISTORY` formats. A timestamped backup is alwa
 ```sh
 git clone https://github.com/pradyb/zsh-history-cleaner
 cd zsh-history-cleaner
-go build -o ~/bin/zsh-history-cleaner .
+go build -o ~/bin/zhc ./cmd/zhc
 ```
 
 Make sure `~/bin` is on your `$PATH`, or install directly:
 
 ```sh
-go install github.com/pradyb/zsh-history-cleaner@latest
+go install github.com/pradyb/zsh-history-cleaner/cmd/zhc@latest
 ```
 
 ## Usage
 
 ```
-zsh-history-cleaner [flags]
+zhc [flags]
 ```
 
 ### Flags
@@ -51,19 +51,19 @@ zsh-history-cleaner [flags]
 
 ```sh
 # Preview what would be removed — nothing is written
-zsh-history-cleaner --dry-run --stats
+zhc --dry-run --stats
 
 # Clean with default passes (dedup + typos + length filter)
-zsh-history-cleaner --stats
+zhc --stats
 
 # Also strip credentials and re-sort by timestamp
-zsh-history-cleaner --remove-secrets --sort --stats
+zhc --remove-secrets --sort --stats
 
 # Stricter length filter, skip typo detection
-zsh-history-cleaner --min-len 4 --no-typos
+zhc --min-len 4 --no-typos
 
 # Clean a custom history file
-zsh-history-cleaner --file ~/.config/zsh/history --stats
+zhc --file ~/.config/zsh/history --stats
 ```
 
 ### Sample output
@@ -106,7 +106,9 @@ cp ~/.zsh-history-cleaner/backup/20260511-230614 ~/.zsh_history
 
 ```
 zsh-history-cleaner/
-├── main.go                  # CLI entry point (flags, output)
+├── cmd/
+│   └── zhc/
+│       └── main.go          # CLI entry point (flags, output)
 ├── internal/
 │   └── history/
 │       ├── entry.go         # Parse & serialize (plain + EXTENDED_HISTORY)

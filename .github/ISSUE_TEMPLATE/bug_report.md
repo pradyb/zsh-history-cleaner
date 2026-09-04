@@ -12,7 +12,7 @@ A clear and concise description of what the bug is.
 
 ## Steps to Reproduce
 
-1. Run `zsh-history-cleaner ...`
+1. Run `zhc ...`
 2. See error
 
 ## Expected Behaviour

@@ -9,7 +9,7 @@ Supports both plain and `EXTENDED_HISTORY` formats. A timestamped backup is alwa
 | Pass | Default | Description |
 |---|---|---|
 | **Deduplicate** | on | Keep only the last occurrence of each command |
-| **Typo filter** | on | Remove commands whose first word is a 1-edit-distance typo of a known program (`gti`, `gerp`, `dockre`, …) |
+| **Typo filter** | on | Remove commands whose first word is a 1-edit-distance typo of a known program (`doker`, `pythn`, `crl`, …) |
 | **Length filter** | on (≥2) | Drop commands shorter than N characters |
 | **Secret filter** | **off** | Opt-in: strip lines that look like credentials / tokens |
 | **Sort by timestamp** | **on** | Re-order entries by timestamp after all other passes (fixes out-of-order extended history) |
@@ -127,4 +127,8 @@ Uses [Levenshtein distance](https://en.wikipedia.org/wiki/Levenshtein_distance) 
 
 `git`, `grep`, `curl`, `sudo`, `ssh`, `cat`, `echo`, `make`, `docker`, `kubectl`, `go`, `npm`, `yarn`, `python`, `python3`, `ls`, `cd`, `cp`, `mv`, `rm`, `find`, `awk`, `sed`
 
-Examples of commands that get filtered: `gti status`, `gerp foo`, `dockre ps`.
+Examples of commands that get filtered: `doker ps`, `pythn app.py`, `crl example.com`.
+
+Note: distance 1 means a single insertion, deletion, or substitution — not a
+transposition. Swapped-letter typos like `gti` (git) or `dockre` (docker) are
+2 edits away and are *not* caught.

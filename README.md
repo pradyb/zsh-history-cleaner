@@ -16,6 +16,22 @@ Supports both plain and `EXTENDED_HISTORY` formats. A timestamped backup is alwa
 
 ## Installation
 
+### Download a release binary
+
+Grab a prebuilt binary from the [releases page](https://github.com/pradyb/zsh-history-cleaner/releases),
+or fetch the latest for your platform:
+
+```sh
+OS=$(uname -s | tr '[:upper:]' '[:lower:]')   # linux | darwin
+ARCH=$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/')
+curl -fsSL -o zhc "https://github.com/pradyb/zsh-history-cleaner/releases/latest/download/zhc-${OS}-${ARCH}"
+chmod +x zhc && mv zhc ~/bin/
+```
+
+Each release ships `checksums.txt` for verification.
+
+### Build from source
+
 ```sh
 git clone https://github.com/pradyb/zsh-history-cleaner
 cd zsh-history-cleaner
@@ -46,6 +62,7 @@ zhc [flags]
 | `--remove-secrets` | false | **Opt-in**: remove lines matching credential patterns |
 | `--no-sort` | false | Skip timestamp sorting |
 | `--min-len` | 2 | Drop commands shorter than N chars (0 to disable) |
+| `--version` | false | Print version, commit and build date |
 
 ### Examples
 
